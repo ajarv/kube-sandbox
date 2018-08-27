@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: patrick-spongebob
+spec:
+
+  restartPolicy: Never
+  containers:
+  - name: web-node
+    image: m7dock/hello-node:v1
+
+  - name: redis
+    image: redis:3.0.7-alpine

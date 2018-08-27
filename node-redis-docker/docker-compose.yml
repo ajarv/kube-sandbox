@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build: ./node-web
+    env_file: .env
+    ports:
+     - "19080:8080"
+
+  redis:
+    image: "redis:alpine"
+
