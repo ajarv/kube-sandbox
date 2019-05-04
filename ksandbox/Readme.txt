@@ -1,4 +1,6 @@
 
+
+```bash
 #https://kubernetes.io/docs/reference/kubectl/cheatsheet/#interacting-with-running-pods
 
 
@@ -23,3 +25,4 @@ kubectl get pod
 kubectl create -f  d0.yaml
 kubectl describe deployment go-app
 
+```
