@@ -1,0 +1,40 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: tommy-app
+  labels:
+    app: tommy
+spec:
+  containers:
+    - name: tommy-app
+      image: m7dock/go-app
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: tommy-service
+spec:
+  selector:
+    app: tommy
+  ports:
+    - port: 8080 # Default port for image
+
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: tommy-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: tommy.dixie.com
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: tommy-service
+            servicePort: 8080
