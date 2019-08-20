@@ -1,0 +1,25 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    .kubewatch.yaml: "handler:\n  slack:\n    channel: XXXX\n    enabled: true\n    token:
+      XXXX\n    \nresource:\n  daemonset: true\n  deployment: true\n  job: false\n
+      \ persistentvolume: false\n  pod: true\n  replicaset: false\n  replicationcontroller:
+      false\n  services: false\n  \nnamespace: \"\"\n"
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-08-20T15:42:45Z"
+    labels:
+      app: kubewatch
+      chart: kubewatch-0.8.5
+      heritage: Tiller
+      release: kubewatch
+    name: kubewatch-config
+    namespace: default
+    resourceVersion: "954"
+    selfLink: /api/v1/namespaces/default/configmaps/kubewatch-config
+    uid: 27c78fd6-c361-11e9-954f-0242ac110059
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
